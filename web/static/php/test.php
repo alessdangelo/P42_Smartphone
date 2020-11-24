@@ -56,7 +56,6 @@
                 }
             ?>
 
-
             <select id="brand" name="choosenBrand" onchange="document.getElementById('selected_brand').value=this.options[this.selectedIndex].text">
                 <option value="0">Choisir Marque</option>
                 <?php 
@@ -87,7 +86,14 @@
                     }
                 ?>
             </select>
-            
+
+            <select id="priceO" name="priceOrder" onchange="document.getElementById('selected_priceOrder').value=this.options[this.selectedIndex].text">
+                <option value="0">Choisir ordre</option>
+                <option value="1">Ascendant</option>
+                <option value="2">Descendant</option>
+            </select>
+
+            <input type="hidden" name="selected_priceOrder" id="selected_priceOrder" value="" />            
             <input type="hidden" name="searched_text" id="searched_text" value=""/>
             <input type="hidden" name="selected_os" id="selected_os" value="" />
             <input type="hidden" name="selected_brand" id="selected_brand" value="" />
@@ -104,8 +110,9 @@
                 $brand = ($_POST['selected_brand']);
                 $cpu = ($_POST['selected_cpu']);
                 $text = ($_POST['searched_text']);
-                
-                $sql = ("select smaName, braName, cpuName from t_smartphone join t_os on fkOS = idOs join t_brand on fkBrand = idBrand join t_cpu on fkCpu = idCpu join t_hardware on fkHardware = idHardware join t_price on idSmartphone = idPrice");
+                $price = ($_POST['selected_priceOrder']);
+
+                $sql = ("select smaName, braName, cpuName from t_smartphone join t_os on fkOS = idOs join t_brand on fkBrand = idBrand join t_cpu on fkCpu = idCpu join t_hardware on fkHardware = idHardware join t_price on idSmartphone+90 = idPrice");
 
 
                 if($_POST['choosenOS'] != 0){
@@ -122,6 +129,18 @@
                     addAttr($sql);
                     $sql .= ("cpuName='".$cpu."'");
                 }
+
+                if($_POST['priceOrder'] != 0){
+                    $orderValue = ($_POST['priceOrder']);
+
+                    if($orderValue == 1){
+                        $sql .= " order by priPrice asc";
+                    }
+                    else if ($orderValue == 2){
+                        $sql .= " order by priPrice desc";
+                    }
+                }
+
 
                 $result = $db->query($sql);
                 while($row = $result->fetch()) {
