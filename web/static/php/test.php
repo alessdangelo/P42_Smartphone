@@ -1,5 +1,15 @@
 <?php 
     include '../../includes/database.php';
+
+    function getElementFromDb($sqlLine, $rowName, $db){
+        $array = array();
+        $result = $db->query($sqlLine);
+        while($row = $result->fetch()) {
+            array_push($array, $row[$rowName]);
+        }
+        return $array;
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -47,19 +57,10 @@
                 <option value="2">Android</option>
             </select>
 
-            <?php 
-                $brands = array();
-                $sql = ("select braName from t_brand");
-                $result = $db->query($sql);
-                while($row = $result->fetch()) {
-                    array_push($brands, $row["braName"]);
-                }
-            ?>
-
             <select id="brand" name="choosenBrand" onchange="document.getElementById('selected_brand').value=this.options[this.selectedIndex].text">
                 <option value="0">Choisir Marque</option>
-                <?php 
-                    foreach ($brands as $key => $value){
+                <?php                
+                    foreach (getElementFromDb("select braName from t_brand", "braName", $db) as $key => $value){
                         ?>
                         <option value="<?php echo ++$key; ?>"><?php echo $value; ?></option>
                         <?php 
@@ -67,19 +68,10 @@
                 ?>
             </select>
 
-            <?php 
-                $cpus = array();
-                $sql = ("select cpuName from t_cpu");
-                $result = $db->query($sql);
-                while($row = $result->fetch()) {
-                    array_push($cpus, $row["cpuName"]);
-                }
-            ?>
-
             <select id="cpu" name="choosenCPU" onchange="document.getElementById('selected_cpu').value=this.options[this.selectedIndex].text">
                 <option value="0">Choisir CPU</option>
                 <?php 
-                    foreach ($cpus as $key => $value){
+                    foreach (getElementFromDb("select cpuName from t_cpu", "cpuName", $db) as $key => $value){
                         ?>
                         <option value="<?php echo ++$key; ?>"><?php echo $value; ?></option>
                         <?php 
@@ -147,7 +139,6 @@
                     $smaName = $row["smaName"];
                     if(!empty($text)){
                         if(substr_count(strtolower($smaName), strtolower($text)) > 0){
-                            //echo  $row["smaName"] . "<br>";
                             ?>
                             <a href="result.php?model=<?php echo $smaName; ?>"><?php echo $smaName; ?></a>
                             <br>
