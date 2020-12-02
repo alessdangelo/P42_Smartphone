@@ -1,4 +1,6 @@
-<?php include '../../includes/database.php'; ?>
+<?php include '../../includes/database.php';
+            $smaName = $_GET["model"];
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -25,7 +27,7 @@
                 <a class="nav-link" href="#">Test<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">À propos</a>
+                <a class="nav-link" href="about.php">À propos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Aide</a>
@@ -36,10 +38,18 @@
     </header>
 
     <section style="display: flex; flex-direction: row; justify-content: center;">
-    <div style="margin-right: 50px;">
-    <?php
-            $smaName = $_GET["model"];
-            
+    <div style="margin: 0 20px 0 20px;">
+        <?php
+            $sql = ("select idSmartphone from t_smartphone where smaName='". $smaName."'");
+            $result = $db->query($sql);
+            $row = $result->fetch();
+
+            $imagePath = "../../../Ressource/Image/".$row["idSmartphone"].".jpg";
+        ?>
+        <img src="<?php echo $imagePath; ?>" alt="Error loading smartphone image" style="width: 400px;">
+    </div>
+    <div style="margin-right: 20px;">
+    <?php            
             $sql = ("select idSmartphone, smaName, smaScreenSize, smaBatteryCapacity, braName, cpuName, cpuNbCores, cpuClockFreq, harStorage, harRam from t_smartphone join t_os on fkOS = idOs join t_brand on fkBrand = idBrand join t_cpu on fkCpu = idCpu join t_hardware on fkHardware = idHardware join t_price on idSmartphone = idPrice where smaName='". $smaName."'");
             $result = $db->query($sql);
                 $row = $result->fetch();
