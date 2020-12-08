@@ -116,7 +116,13 @@ function genPhoneListe(){
     switchSlot(0);
 }
 
+function addPhoneSlot(name, imagesource, price, url){
+    phoneSlots.push(new PhoneSlot(name,imagesource,price,url));
+}
 
+function addPhoneShowSlot(name, imagesource, background, infoArray, price, url){
+    phoneShowSlots.push(new PhoneShow(name,imagesource,background,infoArray,price,url));
+}
 
 function switchBnt(index, idDiv){
     let child=document.getElementById(idDiv).children;
