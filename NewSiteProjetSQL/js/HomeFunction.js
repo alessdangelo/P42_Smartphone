@@ -99,7 +99,7 @@ function SupstractIndex(){
 }
 
 function genPhoneListe(){
-    for (var i = 0; i < 3; i++) {
+    /*for (var i = 0; i < 3; i++) {
         phoneSlots.push(new PhoneSlot("Phone Name n°"+phoneSlots.length,"../oder/Image/PhoneDefaultImage.png",phoneSlots.length*10,""))
         phoneSlots.push(new PhoneSlot("Phone Name n°"+phoneSlots.length,"../oder/Image/Iphone12.png",phoneSlots.length*10,""))
         phoneSlots.push(new PhoneSlot("Phone Name n°"+phoneSlots.length,"../oder/Image/HuaweiP40.png",phoneSlots.length*10,""))
@@ -113,7 +113,7 @@ function genPhoneListe(){
     phoneShowSlots.push(new PhoneShow("PhoneShow","Phone Name n°"+phoneShowSlots.length,"../oder/Image/samsungA51.png","../oder/Image/PhoneShowBackground"+(phoneShowSlots.length+1)+".jpg",["126 GB","16 MPX","3200x4000px"],phoneShowSlots.length*1000,""))
     phoneShowSlots.push(new PhoneShow("PhoneShow","Phone Name n°"+phoneShowSlots.length,"../oder/Image/XiamiMi10Pro.png","../oder/Image/PhoneShowBackground"+(phoneShowSlots.length+1)+".jpg",["126 GB","16 MPX","3200x4000px"],phoneShowSlots.length*1000,""))
     switchShowSlot(0);
-    switchSlot(0);
+    switchSlot(0);*/
 }
 
 function addPhoneSlot(name, imagesource, price, url){
