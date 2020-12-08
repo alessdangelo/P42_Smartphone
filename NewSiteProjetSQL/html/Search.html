@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <!--
+            By      : Theo Bensaci
+            Date        : 12.11.2020
+            Desc : Home Page for PhoneHub
+        -->
+        <title>PhoneHub Home</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <script src="../js/PhoneSlotClass.js"></script>
+        <script src="../js/GenGlobalEllement.js"></script>
+    </head>
+    <body onload="GenEllement();">
+        <div id="Container">
+            <div class="Menu">
+                <img id="ShortLogo" src="../oder/Image/LogoShort.png" alt="PhoneHub short logo">
+                <ul>
+                    <li><a href="../html/home.html">Home</a></li>
+                    <li><a id="Selected" href="../html/Search.html">Search</a></li>
+                    <li><a href="">About</a></li>
+                </ul>
+                <button><img id="MenuIcon" src="../oder/Image/MenuIcon.png" alt="Menu icon"></button>
+            </div>
+            <div id="SearchView">
+                <h1>Search</h1>
+                <div id="FilterAndSearch">
+                    <div id="Search">
+                        <input type="text">
+                        <button><img src="../oder/Image/SearchIcon.png" alt="search icon"></button>
+                    </div>
+                    <button id="Filltrer">+ Filltrer</button>
+                </div>
+            </div>
+            <div id="PhoneSlots">
+                
+            </div>
+            <footer>
+            </footer>
+        </div>
+    </body>
+</html>
