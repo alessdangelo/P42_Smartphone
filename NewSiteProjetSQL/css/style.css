@@ -199,6 +199,10 @@ body{
                     margin: 5px;
                     font-weight: normal;
                 }
+                #PhoneShow #PhoneWindow #PhoneInfo a #PhoneImage{
+                    width: 500px;
+                    height: 500px;
+                }
 
         #PhoneShow #Price{
             position: absolute;
@@ -353,8 +357,8 @@ body{
     to {opacity: 1;transform: translateY(0);}
 }
     .PhoneSlots img{
-        width: 70%;
-        height: 100%;
+        width: 300px;
+        height: 300px;
     }
     .PhoneSlots a{
         color: var(--fontColor);
