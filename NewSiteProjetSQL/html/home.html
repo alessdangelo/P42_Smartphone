@@ -13,22 +13,29 @@
         <script src="../js/PhoneSlotClass.js"></script>
         <script src="../js/GenGlobalEllement.js"></script>
     </head>
-    <body onload="genPhoneListe(); GenEllement();">
+    <body onload=" GenEllement();">
         <div id="Container">
             <div id="FirstView">
                 <div class="Menu">
                     <img id="ShortLogo" src="../oder/Image/LogoShort.png" alt="PhoneHub short logo">
                     <ul>
-                        <li><a id="Selected" href="../html/home.html">Home</a></li>
-                        <li><a href="../html/Search.html">Search</a></li>
-                        <li><a href="../html/about.html">About</a></li>
+                        <li><a id="Selected" href="home.html">Home</a></li>
+                        <li><a href="Search.html">Search</a></li>
+                        <li><a href="">About</a></li>
                     </ul>
-                    <button><img id="MenuIcon" src="../oder/Image/MenuIcon.png" alt="Menu icon"></button>
+                    <div id="SearchMenu">
+                        <button><img id="MenuIcon" src="../oder/Image/SearchIcon.png" alt="Menu icon"></button>
+                        <div id="SearchContent">
+                            <div class="Search">
+                                <input type="text">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="SearchTitle">
                     <img id="LongLogo" src="../oder/Image/LogoLong.png" width="50%" alt="PhoneHub long logo">
                     <h2 id="SubTitle">FIND THE PHONE YOU NEED</h2>
-                    <div id="Search">
+                    <div class="Search">
                         <input type="text">
                         <button><img src="../oder/Image/SearchIcon.png" alt="search icon"></button>
                     </div>
@@ -39,7 +46,7 @@
                 <div id="PhoneWindow">
                     <button class="switch" onclick="SupstractShowIndex()"><div class="arrow-left"></div></button>
                         <div id="PhoneInfo">
-                            <a href=""><img id="PhoneImage" src="../oder/Image/PhoneDefaultImage.png"></a>
+                            <a href=""><img id="PhoneImage" src="../oder/Image/13.png"></a>
                             <div id="Desc">
                                 <h1 id="Phone Title">Phone Name</h1>
                                 <h2>126 GB</h2>
@@ -51,11 +58,11 @@
                     <button class="switch" onclick="IncrementShowIndex()"><div class="arrow-right"></div></button>
                 </div>
                 <div id="PageView">
-                    <button class="PageBnt" id="Selected" onclick="switchShowSlot(0)"></button>
-                    <button class="PageBnt" onclick="switchShowSlot(1)"></button>
-                    <button class="PageBnt" onclick="switchShowSlot(2)"></button>
-                    <button class="PageBnt" onclick="switchShowSlot(3)"></button>
-                    <button class="PageBnt" onclick="switchShowSlot(4)"></button>
+                    <button class="PageBnt" id="Selected" onclick="SwitchShowSlot(0)"></button>
+                    <button class="PageBnt" onclick="SwitchShowSlot(1)"></button>
+                    <button class="PageBnt" onclick="SwitchShowSlot(2)"></button>
+                    <button class="PageBnt" onclick="SwitchShowSlot(3)"></button>
+                    <button class="PageBnt" onclick="SwitchShowSlot(4)"></button>
                 </div>
                 <h1 id="Price">909.-</h1>
             </div>
@@ -65,7 +72,7 @@
                     <div id="PhoneContender">
                         <div class="PhoneSlots">
                             <h2>Phone Name</h2>
-                            <img src="../oder/Image/PhoneDefaultImage.png" alt="Phone Image">
+                            <img src="../oder/Image/13.jpg" alt="Phone Image">
                             <h3>330.-</h3>
                             <a href=""><h2>More</h2></a>
                         </div>
@@ -85,11 +92,11 @@
                     <button class="switch" onclick="IncrementIndex()"><div class="arrow-right"></div></button>
                 </div>
                 <div id="PageView">
-                    <button class="PageBnt" id="Selected" onclick="switchSlot(0)"></button>
-                    <button class="PageBnt" onclick="switchSlot(1)"></button>
-                    <button class="PageBnt" onclick="switchSlot(2)"></button>
-                    <button class="PageBnt" onclick="switchSlot(3)"></button>
-                    <button class="PageBnt" onclick="switchSlot(4)"></button>
+                    <button class="PageBnt" id="Selected" onclick="SwitchSlot(0)"></button>
+                    <button class="PageBnt" onclick="SwitchSlot(1)"></button>
+                    <button class="PageBnt" onclick="SwitchSlot(2)"></button>
+                    <button class="PageBnt" onclick="SwitchSlot(3)"></button>
+                    <button class="PageBnt" onclick="SwitchSlot(4)"></button>
                 </div>
                 <div id="Wave"></div>
             </div>

@@ -13,21 +13,27 @@
         <script src="../js/GenGlobalEllement.js"></script>
         <script src="../js/SearchFunction.js"></script>
     </head>
-    <body onload="GenEllement(); genPhoneListe()">
+    <body onload="GenEllement();">
         <div id="Container">
             <div class="Menu">
                 <img id="ShortLogo" src="../oder/Image/LogoShort.png" alt="PhoneHub short logo">
                 <ul>
-                    <li><a href="../html/home.html">Home</a></li>
-                    <li><a id="Selected" href="../html/Search.html">Search</a></li>
-                    <li><a href="../html/about.html">About</a></li>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a id="Selected" href="Search.html">Search</a></li>
+                    <li><a href="">About</a></li>
                 </ul>
-                <button><img id="MenuIcon" src="../oder/Image/MenuIcon.png" alt="Menu icon"></button>
+                <div id="SearchMenu">
+                    <button><img id="MenuIcon" src="../oder/Image/SearchIcon.png" alt="Menu icon"></button>
+                    <div id="SearchContent">
+                        <div class="Search">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="SearchView">
-                <h1>Search</h1>
                 <div id="FilterAndSearch">
-                    <div id="Search">
+                    <div class="Search">
                         <input type="text">
                         <button><img src="../oder/Image/SearchIcon.png" alt="search icon"></button>
                     </div>

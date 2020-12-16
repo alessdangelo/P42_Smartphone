@@ -16,7 +16,6 @@
         src: url("../oder/Font/Comfortaa.ttf");
     }
 
-
 /* style setup */
 body{
     margin: 0;
@@ -76,11 +75,29 @@ body{
             width: 50px;
             height: 50px;
         }
-        
-        #EtmlLogo{
-            width: 75%;
-            object-fit: contain;
+        .Menu #SearchContent{
+            opacity: 0;
+            position: absolute;
+            right: 35px;
+            top: 11px;
+            width: 0px;
+            transition: width 0.5s, opacity 0.5s;
         }
+        .Menu #MenuIcon{
+            width: 30px;
+            height: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        #SearchContent .Search{
+            width: 100%;
+        }
+        .Menu #SearchMenu:hover #SearchContent {
+            opacity: 1;
+            width: 300px;
+        }
+
+
 
         #SearchTitle{
             display: flex;
@@ -95,7 +112,7 @@ body{
                 font-family: PhoneHubFont;
                 color: var(--fontColor);
             }
-#Search{
+.Search{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -110,14 +127,14 @@ body{
     padding-left: 10px;
     padding-right: 10px;
 }
-    #Search img{
+    .Search img{
         height: 30px;
     }
-    #Search button{
+    .Search button{
         background-color: transparent;
         border-style: none;
     }
-    #Search input{
+    .Search input{
         background-color: transparent;
         border-style: none;
         width: 95%;
@@ -387,11 +404,6 @@ body{
     width: 100%;
     margin-top: 50px;
 }
-
-    .AboutParagraphe #Text #AboutTitle{
-        margin: -100;
-    }
-
     .AboutParagraphe #Image{
         width: 50%;
         display: flex;
@@ -409,10 +421,6 @@ body{
         .AboutParagraphe #Text p{
             margin:0;
             width: 90%;
-        }
-        .AboutParagraphe #AboutTitle h1{
-            margin-top: -1%;
-            padding-bottom:2%;
         }
         .AboutParagraphe #Text h1{
             margin-bottom:0;
