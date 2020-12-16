@@ -76,7 +76,11 @@ body{
             width: 50px;
             height: 50px;
         }
-
+        
+        #EtmlLogo{
+            width: 75%;
+            object-fit: contain;
+        }
 
         #SearchTitle{
             display: flex;
@@ -383,6 +387,11 @@ body{
     width: 100%;
     margin-top: 50px;
 }
+
+    .AboutParagraphe #Text #AboutTitle{
+        margin: -100;
+    }
+
     .AboutParagraphe #Image{
         width: 50%;
         display: flex;
@@ -400,6 +409,10 @@ body{
         .AboutParagraphe #Text p{
             margin:0;
             width: 90%;
+        }
+        .AboutParagraphe #AboutTitle h1{
+            margin-top: -1%;
+            padding-bottom:2%;
         }
         .AboutParagraphe #Text h1{
             margin-bottom:0;
