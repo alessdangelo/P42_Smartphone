@@ -1,47 +1,7 @@
 <?php
     include '../php/database.php';
-    function AddPhoneToShowSlot($smartphoneName, $db){
-        $sql = ("select smaName, idSmartphone, harStorage, harRam, smaScreenSize, priPrice from t_smartphone join t_os on fkOS = idOs join t_brand on fkBrand = idBrand join t_cpu on fkCpu = idCpu join t_hardware on fkHardware = idHardware join t_price on idSmartphone = idPrice where smaName='".$smartphoneName."'");
-        $result = $db->query($sql);
-        $row = $result->fetch();
-
-        $name = $row["smaName"];
-        $imagesource = '../oder/Image/'.$row["idSmartphone"].".png";
-        $background = '"../oder/Image/PhoneShowBackground"+(phoneShowSlots.length+1)+".jpg"';
-        $storage = $row["harStorage"];
-        $ram = $row["harRam"];
-        $price = $row["priPrice"];
-        $url = 'home.php';
-
-        echo "<script> 
-        addPhoneShowSlot('PhoneShow', '$name', '$imagesource', '$background', ['$storage GB', '$ram GB RAM'], '$price', '$url');
-        </script>
-        ";
-        }
-
-    function AddPhoneToSlot($smartphoneName, $db){
-        $sql = ("select smaName, idSmartphone, harStorage, harRam, smaScreenSize, priPrice from t_smartphone join t_os on fkOS = idOs join t_brand on fkBrand = idBrand join t_cpu on fkCpu = idCpu join t_hardware on fkHardware = idHardware join t_price on idSmartphone = idPrice where smaName='".$smartphoneName."'");
-        $result = $db->query($sql);
-        $row = $result->fetch();
-
-        $name = $row["smaName"];
-        $imagesource = '../oder/Image/'.$row["idSmartphone"].".png";
-        $price = $row["priPrice"];
-        $url = 'home.php';
-
-        echo "<script> 
-        addPhoneSlot('$name', '$imagesource', '$price', '$url');
-        </script>
-        ";
-    }
-
-    function Refresh(){
-        echo "<script>
-            switchShowSlot(0);
-            switchSlot(0);
-            </script>
-        ";
-    }
+    include '../php/searchFunction.php';
+    include '../php/addPhone.php';
 
     function Get5BestSmartphoneByBatteryLife($db){
         $sql = ("select smaName from t_smartphone order by smaBatteryLife desc limit 5");
@@ -88,19 +48,22 @@
                     <div id="SearchMenu">
                         <button><img id="MenuIcon" src="../oder/Image/SearchIcon.png" alt="Menu icon"></button>
                         <div id="SearchContent">
-                            <div class="Search">
-                                <input type="text">
-                            </div>
+                            <form class="Search" id="littleSearchModel" method="POST">
+                                <input id="text" name="searchedText" type="text" onchange="document.getElementById('littleSearchedText').value=this.value">
+                                <button type="submit" name="littleSearchModel" value=""><img src="../oder/Image/SearchIcon.png" alt="search icon"></button>
+                                <input type="hidden" name="littleSearchedText" id="littleSearchedText" value=""/>
+                            </form>
                         </div>
                     </div>
                 </div>
                 <div id="SearchTitle">
                     <img id="LongLogo" src="../oder/Image/LogoLong.png" width="50%" alt="PhoneHub long logo">
                     <h2 id="SubTitle">FIND THE PHONE YOU NEED</h2>
-                    <div class="Search">
-                        <input type="text">
-                        <button><img src="../oder/Image/SearchIcon.png" alt="search icon"></button>
-                    </div>
+                    <form class="Search" id="searchModel" method="POST">
+                        <input id="text" name="searchedText" type="text" onchange="document.getElementById('searched_text').value=this.value">
+                        <button type="submit" name="searchModel" value=""><img src="../oder/Image/SearchIcon.png" alt="search icon"></button>
+                        <input type="hidden" name="searched_text" id="searched_text" value=""/>
+                    </form>
                 </div>
                 <div id="Shadow"></div>
             </div>
@@ -181,5 +144,6 @@
 <?php
     Get5BestSmartphoneByBatteryLife($db);
     Get15BestSmartphoneByCpu($db);
-    Refresh();
+    RefreshOne();
+    RefreshTwo();
 ?>

@@ -18,7 +18,7 @@ function ReloadPhoneShow(index){
     div.classList.add("CreateAnimation");
 }
 
-function switchShowSlot(index){
+function SwitchShowSlot(index){
     ReloadPhoneShow(index);
     indexShowSwitch=index;
     SwitchBntSelected(document.getElementById("PhoneShow").querySelector("#PageView"),"PageBnt",indexShowSwitch)
@@ -109,8 +109,8 @@ function PhoneShowSlotClean(){
     phoneShowSlots=[];
 }
 
-function AddPhoneShowSlot(name, imagesource, background, infoArray, price, url){
-    phoneShowSlots.push(new PhoneShow(name,imagesource,background,infoArray,price,url));
+function AddPhoneShowSlot(divName, name, imagesource, background, infoArray, price, url){
+    phoneShowSlots.push(new PhoneShow(divName, name,imagesource,background,infoArray,price,url));
 }
 
 function SwitchBnt(index, idDiv){

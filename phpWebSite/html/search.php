@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <?php
     include "../php/database.php";
-                              
+    include "../php/searchFunction.php";
+    include "../php/addPhone.php";
+
     function SearchPhone($phone, $db){
         $sql = ("select smaName, braName, cpuName from t_smartphone join t_os on fkOS = idOs join t_brand on fkBrand = idBrand join t_cpu on fkCpu = idCpu join t_hardware on fkHardware = idHardware join t_price on idSmartphone = idPrice");
         $result = $db->query($sql);
@@ -11,22 +13,6 @@
             }
         }
         Refresh();
-    }
-
-    function AddPhoneToSlot($smartphoneName, $db){
-        $sql = ("select smaName, idSmartphone, harStorage, harRam, smaScreenSize, priPrice from t_smartphone join t_os on fkOS = idOs join t_brand on fkBrand = idBrand join t_cpu on fkCpu = idCpu join t_hardware on fkHardware = idHardware join t_price on idSmartphone = idPrice where smaName='".$smartphoneName."'");
-        $result = $db->query($sql);
-        $row = $result->fetch();
-
-        $name = $row["smaName"];
-        $imagesource = '../oder/Image/'.$row["idSmartphone"].".png";
-        $price = $row["priPrice"];
-        $url = 'home.php';
-
-        echo "<script> 
-        AddPhoneSlot('$name', '$imagesource', '$price', '$url');
-        </script>
-        ";
     }
 
     function Refresh(){
@@ -71,10 +57,10 @@
             </div>
             <div id="SearchView">
                 <div id="FilterAndSearch">
-                        <form class="Search" id="search" method="POST">
+                        <form class="Search" id="searchModel" method="POST">
                             <input id="text" name="searchedText" type="text" onchange="document.getElementById('searched_text').value=this.value">
                             <input type="hidden" name="searched_text" id="searched_text" value=""/>
-                            <button type="submit" name="search" value=""><img src="../oder/Image/SearchIcon.png" alt="search icon"></button>
+                            <button type="submit" name="searchModel" value=""><img src="../oder/Image/SearchIcon.png" alt="search icon"></button>
                         </form>
                     <button id="Filltrer">+ Filltrer</button>
                 </div>
@@ -89,8 +75,7 @@
 </html>
 
 <?php
-    if(isset($_POST['search'])){
-        echo $_POST['searched_text']." is";
-        SearchPhone($_POST['searched_text'], $db);
+    if(isset($_GET["model"])){
+        SearchPhone($_GET["model"], $db);
     }
 ?>
