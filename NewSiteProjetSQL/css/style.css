@@ -404,15 +404,27 @@ body{
     width: 100%;
     margin-top: 50px;
 }
+#EtmlLogo{
+    width: 75%;
+    object-fit: contain;
+}
     .AboutParagraphe #Image{
         width: 50%;
         display: flex;
+        object-fit: cover;
         flex-direction: column;
         align-items: center;
     }
-        .AboutParagraphe #Image img{
-            height: 90%;
-        }
+
+}
+.AboutParagraphe #AboutTitle h1{
+    margin-top: -1%;
+    padding-bottom:2%;
+}
+
+    .AboutParagraphe #Image img{
+        height: 90%;
+    }
 
     .AboutParagraphe #Text{
         width: 50%;
