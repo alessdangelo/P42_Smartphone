@@ -25,7 +25,7 @@ class PhoneSlot{
         this.slot.appendChild(image);
 
         let h3=document.createElement("h3");
-        h3.innerHTML=this.price+".-";
+        h3.innerHTML=this.price+" CHF";
 
         this.slot.appendChild(h3);
 
@@ -65,6 +65,6 @@ class PhoneShow{
             value.innerHTML=this.info[i];
             sceen.querySelector("#PhoneInfo").querySelector("#Desc").appendChild(value)
         }
-        sceen.querySelector("#Price").innerHTML=this.price+".-";
+        sceen.querySelector("#Price").innerHTML=this.price+" CHF";
     }
 }

@@ -29,12 +29,13 @@ include '../php/database.php';
                         <button><img id="MenuIcon" src="../oder/Image/SearchIcon.png" alt="Menu icon"></button>
                         <div id="SearchContent">
                             <form class="Search" id="littleSearchModel" method="POST">
-                                <input id="text" name="searchedText" type="text" onchange="document.getElementById('littleSearchedText').value=this.value">
-                                <button type="submit" name="littleSearchModel" value=""><img src="../oder/Image/SearchIcon.png" alt="search icon"></button>
+                                <input id="littleSearchedText" name="littleSearchedText" type="text" onchange="document.getElementById('littleSearchedText').value=this.value">
+                                <button type="submit" name="littleSearchModel" value=""></button>
                                 <input type="hidden" name="littleSearchedText" id="littleSearchedText" value=""/>
                             </form>
                         </div>
                     </div>
+                </div>
                 </div>
                 <section style="display: flex; flex-direction: row; justify-content: center;">
                     <div style="margin: 0 20px 0 20px;">

@@ -11,6 +11,12 @@
             if(substr_count(strtolower($row["smaName"]), strtolower($phone)) > 0){
                 AddPhoneToSlot($row["smaName"], $db);
             }
+            else if (substr_count(strtolower($row["braName"]), strtolower($phone)) > 0){
+                AddPhoneToSlot($row["smaName"], $db);                       
+            }
+            else if (substr_count(strtolower($row["cpuName"]), strtolower($phone)) > 0){
+                AddPhoneToSlot($row["smaName"], $db);                      
+            }
         }
         Refresh();
     }
@@ -47,13 +53,15 @@
                     <li><a href="about.php">About</a></li>
                 </ul>
                 <div id="SearchMenu">
-                    <button><img id="MenuIcon" src="../oder/Image/SearchIcon.png" alt="Menu icon"></button>
-                    <div id="SearchContent">
-                        <div class="Search">
-                            <input type="text">
+                        <button><img id="MenuIcon" src="../oder/Image/SearchIcon.png" alt="Menu icon"></button>
+                        <div id="SearchContent">
+                            <form class="Search" id="littleSearchModel" method="POST">
+                                <input id="littleText" name="littleText" type="text" onchange="document.getElementById('littleSearchedText').value=this.value">
+                                <button type="submit" name="littleSearchModel" value=""></button>
+                                <input type="hidden" name="littleSearchedText" id="littleSearchedText" value=""/>
+                            </form>
                         </div>
                     </div>
-                </div>
             </div>
             <div id="SearchView">
                 <div id="FilterAndSearch">
@@ -76,6 +84,8 @@
 
 <?php
     if(isset($_GET["model"])){
-        SearchPhone($_GET["model"], $db);
+        if($_GET["model"] != ''){
+            SearchPhone($_GET["model"], $db);
+        }
     }
 ?>

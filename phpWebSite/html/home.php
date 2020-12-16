@@ -49,8 +49,8 @@
                         <button><img id="MenuIcon" src="../oder/Image/SearchIcon.png" alt="Menu icon"></button>
                         <div id="SearchContent">
                             <form class="Search" id="littleSearchModel" method="POST">
-                                <input id="text" name="searchedText" type="text" onchange="document.getElementById('littleSearchedText').value=this.value">
-                                <button type="submit" name="littleSearchModel" value=""><img src="../oder/Image/SearchIcon.png" alt="search icon"></button>
+                                <input id="littleText" name="littleText" type="text" onchange="document.getElementById('littleSearchedText').value=this.value">
+                                <button type="submit" name="littleSearchModel" value=""></button>
                                 <input type="hidden" name="littleSearchedText" id="littleSearchedText" value=""/>
                             </form>
                         </div>
@@ -60,7 +60,7 @@
                     <img id="LongLogo" src="../oder/Image/LogoLong.png" width="50%" alt="PhoneHub long logo">
                     <h2 id="SubTitle">FIND THE PHONE YOU NEED</h2>
                     <form class="Search" id="searchModel" method="POST">
-                        <input id="text" name="searchedText" type="text" onchange="document.getElementById('searched_text').value=this.value">
+                        <input id="searchedText" name="searchedText" type="text" onchange="document.getElementById('searched_text').value=this.value">
                         <button type="submit" name="searchModel" value=""><img src="../oder/Image/SearchIcon.png" alt="search icon"></button>
                         <input type="hidden" name="searched_text" id="searched_text" value=""/>
                     </form>
@@ -89,7 +89,7 @@
                     <button class="PageBnt" onclick="SwitchShowSlot(3)"></button>
                     <button class="PageBnt" onclick="SwitchShowSlot(4)"></button>
                 </div>
-                <h1 id="Price">909.-</h1>
+                <h1 id="Price">909 CHF</h1>
             </div>
             <div id="PhoneList">
                 <div id="PhoneSwitch">
