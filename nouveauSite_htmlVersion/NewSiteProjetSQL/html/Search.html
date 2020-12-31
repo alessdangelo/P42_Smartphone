@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <!--
+            By      : Theo Bensaci
+            Date        : 12.11.2020
+            Desc : search Page for PhoneHub
+        -->
+        <title>PhoneHub Search</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <script src="../js/PhoneSlotClass.js"></script>
+        <script src="../js/GenGlobalEllement.js"></script>
+        <script src="../js/SearchFunction.js"></script>
+    </head>
+    <body onload="GenEllement();">
+        <div id="Container">
+            <div class="Menu">
+                <img id="ShortLogo" src="../oder/Image/LogoShort.png" alt="PhoneHub short logo">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a id="Selected" href="Search.html">Search</a></li>
+                    <li><a href="">About</a></li>
+                </ul>
+                <div id="SearchMenu">
+                    <button><img id="MenuIcon" src="../oder/Image/SearchIcon.png" alt="Menu icon"></button>
+                    <div id="SearchContent">
+                        <div class="Search">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="SearchView">
+                <div id="FilterAndSearch">
+                    <div class="Search">
+                        <input type="text">
+                        <button><img src="../oder/Image/SearchIcon.png" alt="search icon"></button>
+                    </div>
+                    <div id="filltrer-Div">
+                        <button id="Filltrer" class="filltrer-bnt">+ Filltrer</button>
+                        <div id="filltrer-content">
+                            <div id="fillter-div-os">
+                                <button id="filltrer-os" class="filltrer-bnt">Os</button>
+                                <div id="filltrer-content-os">
+                                </div>
+                            </div>
+                            <div id="fillter-div-const">
+                                <button id="filltrer-const" class="filltrer-bnt">Constructeur</button>
+                                <div id="filltrer-content-const">
+                                </div>
+                            </div>
+                            <div id="fillter-div-top">
+                                <button id="filltrer-top" class="filltrer-bnt">Top</button>
+                                <div id="filltrer-content-top">
+                                </div>
+                            </div>
+                            <div id="fillter-div-oder">
+                                <button id="filltrer-oder" class="filltrer-bnt">Oder</button>
+                                <div id="filltrer-content-oder">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="PhoneResult">
+
+            </div>
+            <footer>
+            </footer>
+        </div>
+    </body>
+</html>

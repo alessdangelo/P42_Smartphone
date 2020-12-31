@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <!--
+            By      : Theo Bensaci
+            Date        : 12.11.2020
+            Desc : phone Page for PhoneHub
+        -->
+        <title>PhoneHub {phoneName}</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <script src="../js/PhonePageFunction.js"></script> 
+        <script src="../js/PhoneSlotClass.js"></script>
+        <script src="../js/GenGlobalEllement.js"></script>
+    </head>
+    <body onload="GenEllement(); GetNewWallpaper();">
+        <div id="Container">
+            <div class="Menu">
+                <img id="ShortLogo" src="../oder/Image/LogoShort.png" alt="PhoneHub short logo">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a id="Selected" href="Search.html">Search</a></li>
+                    <li><a href="">About</a></li>
+                </ul>
+                <div id="SearchMenu">
+                    <button><img id="MenuIcon" src="../oder/Image/SearchIcon.png" alt="Menu icon"></button>
+                    <div id="SearchContent">
+                        <div class="Search">
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="PhoneSceen">
+                <h1 id="PhoneTitle">Phone Name</h1>
+                <img id="PhoneImage" src="../oder/Image/13.png">
+                <div id="Wave"></div>
+            </div>
+            <div id="Info">
+                <div id="Right">
+                    <h1>Caracteristique</h1>
+                    <table id="Caracteristique">
+                        <tbody>
+                        </tbody>
+                      </table> 
+                </div>
+                <div id="Left">
+                    <canvas style="width: 500px; height: 400px;" id="myChart"></canvas>
+                </div>
+            </div>
+            <footer>
+            </footer>
+        </div>
+    </body>
+</html>
