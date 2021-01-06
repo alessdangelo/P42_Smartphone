@@ -5,15 +5,33 @@
     Desc : toute les fonction de la page search
 */
 let phonelist=[];
+var defaultTextSearch = "Aucune recherche n'a été effectuée...";
+
+function AddDefaultText(){
+    let div=document.getElementById("PhoneResult");
+    let text=document.createElement("h2");
+    text.innerHTML=defaultTextSearch;
+    text.id="text-search";
+    div.appendChild(text);
+}
+
 function ShowPhones(){
     let div=document.getElementById("PhoneResult");
     phonelist.forEach(element => {
         div.appendChild(element.slot)
     });
+
+    if(phonelist.length == 0 && document.getElementById("text-search") == defaultTextSearch){
+        let text=document.getElementById("text-search");
+        text.innerHTML="Aucun smartphone n'a été trouvé..."
+        text.id="text-search";
+    }
 }
 
 function AddPhoneSlot(name, imagesource, price, url){
     phonelist.push(new PhoneSlot(name,imagesource,price,url));
+    let text=document.getElementById("text-search");
+    text.remove();
 }
 
 function PhoneSlotClean(){

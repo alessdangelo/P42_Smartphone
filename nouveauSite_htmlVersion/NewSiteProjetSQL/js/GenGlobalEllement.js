@@ -6,7 +6,7 @@
 */
 function GenEllement(){
     //Footer 
-    let footer=document.querySelector("Footer");
+    let footer=document.querySelector("footer");
     let div=document.createElement("div");
     let logo=document.createElement("IMG");
     logo.src="../oder/Image/LogoShort.png";
@@ -15,7 +15,7 @@ function GenEllement(){
 
     let creditContent = [];
     creditContent.push(document.createElement("li"));
-    creditContent[creditContent.length-1].innerHTML="dsads";
+    creditContent[creditContent.length-1].innerHTML="PhoneHub - By Alessandro D'Angelo, Clément Sartoni, Manuel Oro et Théo Bensaci";
     creditContent.forEach(element => {
         ul.appendChild(element);
     });

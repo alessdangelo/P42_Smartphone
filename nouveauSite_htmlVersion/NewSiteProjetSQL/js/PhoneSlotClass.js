@@ -1,3 +1,20 @@
+/*
+    ETML
+    By : Theo Bensaci
+    Date : 25.11.2020
+    Desc : les classes de smartphones
+*/
+function RemoveScriptText(){
+    var r = document.getElementsByTagName('script');
+
+    for (var i = (r.length-1); i >= 0; i--) {
+
+        if(r[i].getAttribute('id') != 'a'){
+            r[i].parentNode.removeChild(r[i]);
+        }
+    }
+}
+
 class PhoneSlot{
     constructor(name, imageSource, price, pageUrl){
         this.name=name;
