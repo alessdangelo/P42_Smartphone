@@ -723,7 +723,16 @@ footer ul a {
     height: 2px;
 }
 
-
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #32a3ff;
+    border-radius: 10px;
+  }
+  
 /*Default object Spawn*/
 .CreateAnimation{
 animation-name: Create;
